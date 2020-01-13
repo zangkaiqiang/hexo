@@ -7,10 +7,12 @@ tags:
 1. 安装nodejs环境
 2. github创建仓库
 3. 安装包
-    $ npm install -g hexo-cli 
-    $ npm install hexo-deployer-git --save
-    $ hexo clean 
-    $ hexo g 
-    $ hexo d
+```bash
+$ npm install -g hexo-cli 
+$ npm install hexo-deployer-git --save
+$ hexo clean 
+$ hexo g 
+$ hexo d
+```
 4. 初始化
 5. 编辑配置文件
