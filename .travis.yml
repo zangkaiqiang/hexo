@@ -1,0 +1,27 @@
+sudo: false
+language: node_js
+node_js:
+  - 10 # use nodejs v10 LTS
+    
+branches:
+  only:
+    - master
+
+before_install:
+  - npm install -g hexo-cli
+
+# Start: Build Lifecycle
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
+
+script:
+  - hexo clean
+  - hexo generate
+
+after_script:
+  - git config user.name "kai"
+  - git config user.email "kqzang@126.com"
+  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
+  - hexo deploy
+
