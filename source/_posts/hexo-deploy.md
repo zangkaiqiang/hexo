@@ -10,21 +10,29 @@ $ npm -v
 ```
 
 ## Github创建仓库
-创建了两个仓库，一个仓库是Hexo，存储源码。另一个是username.github.io
+创建了两个仓库，一个仓库是hexo，存储源码。另一个是username.github.io。
 ## 初始化准备
 ```bash
-$ git clone https://github.com/Hexo
-$ cd Hexo
+# 初始化博客
+$ mkdir hexo
+$ cd hexo
 $ npm install -g hexo-cli 
 $ npm install hexo-deployer-git --save
 $ hexo -v
 $ hexo init
+# 添加仓库
+$ git init
+$ git remote add origin git@github.com:{username}/hexo.git
+$ git add .
+$ git commit -m 'init hexo'
+$ git push -u origin master
 ```
 ## 编辑配置文件_config.yml
 在最后加上以下代码
 ```bash
 deploy:
 - type: git
+  # 生成页面代码仓库
   repo: https://gh_token@github.com/{username}/{username}.github.io.git
   branch: master
 ```
@@ -62,3 +70,29 @@ after_script:
 GH_TOKEN为全局环境变量，需要在Gitlab中配置：
 Settings->Developer settings->Personal access tokens->Generate new token;将repo全部勾选
 
+更新hexo仓库
+```bash
+$ git add .travis.yml
+$ git commit -m 'add travis'
+$ git push
+```
+
+代码推送到hexo仓库后，travis ci会帮助完成自动部署任务。你可以看到{username}.github.io仓库的时间会更新，这是travis ci自动将前端代码推送到了{username}.github.io，这时博客页面也已经更新。
+
+## 编写博客流程
+1. 更新hexo仓库代码，如果在一台全新的机器上，则需要先把hexo仓库拉下来，
+```bash
+# 如果新电脑hexo环境没有配置需要先配置环境
+$ git clone git@github.com:{username}/hexo.git
+
+# 新建一个名字为hello hexo的博客，在source\_posts下面会生成hello hexo.md文件,# 编写md文件完成后保存
+$ hexo n 'hello hexo'
+# 推送到github
+$ git add .
+$ git commit -m 'add blog hello hexo'
+# key要匹配才能做push
+$ git push
+# 推送完成后，travis ci会帮助完成部署工作
+```
+
+借助Travis ci，多终端就可以同步使用Hexo愉快的编写Markdown了
