@@ -93,13 +93,13 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
 - type: git
   repo: https://gh_token@github.com/zangkaiqiang/zangkaiqiang.github.io.git
-  #  repo: git@github.com:zangkaiqiang/zangkaiqiang.gitlab.io.git
+  #  repo: git@github.com:zangkaiqiang/zangkaiqiang.gitlub.io.git
 
   branch: master
