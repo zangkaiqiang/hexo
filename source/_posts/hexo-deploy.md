@@ -80,13 +80,16 @@ $ git push
 代码推送到hexo仓库后，travis ci会帮助完成自动部署任务。你可以看到{username}.github.io仓库的时间会更新，这是travis ci自动将前端代码推送到了{username}.github.io，这时博客页面也已经更新。
 
 ## 编写博客流程
-1. 更新hexo仓库代码，如果在一台全新的机器上，则需要先把hexo仓库拉下来，
 ```bash
-# 如果新电脑hexo环境没有配置需要先配置环境
+# 如果新电脑需要先从仓库拉去源码，hexo环境没有配置需要先配置环境
 $ git clone git@github.com:{username}/hexo.git
+# 
+$ git pull
 
-# 新建一个名字为hello hexo的博客，在source\_posts下面会生成hello hexo.md文件,# 编写md文件完成后保存
+# 新建一个博客,例如hello hexo
 $ hexo n 'hello hexo'
+# 那么在source\_posts下面会生成hello hexo.md文件,# 编写md文件完成后保存
+
 # 推送到github
 $ git add .
 $ git commit -m 'add blog hello hexo'
