@@ -2,7 +2,8 @@
 title: Hexo+Github+Travis CI 自动化部署
 date: 2020-01-13 16:55:18
 tags:
-categories: devops
+categories: 
+- devops
 ---
 
 ## 安装nodejs环境
