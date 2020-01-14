@@ -101,3 +101,26 @@ $ git push
 ```
 
 借助Travis ci，多终端就可以同步使用Hexo愉快的编写Markdown了
+
+
+
+## 异常处理
+
+### valine评论系统的post_url异常,导致在邮件中打开链接后看不到评论
+* 全局变量SITE_URL结尾多了'/'，例如
+```
+https://zangkaiqiang.github.io/
+```
+导致最终的POST_URL为，该链接不能看到评论
+```
+https://zangkaiqiang.github.io//2020/01/13/hexo-deploy/#5e1db789ff02830008fa143b
+```
+
+* 应该使用
+```
+https://zangkaiqiang.github.io
+```
+最终生成
+```
+https://zangkaiqiang.github.io/2020/01/13/hexo-deploy/#5e1db789ff02830008fa143b
+```
