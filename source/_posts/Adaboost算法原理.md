@@ -2,6 +2,7 @@
 title: Adaboost算法原理
 date: 2020-01-14 14:02:58
 tags:
+categories: algorithm
 ---
 
 输入数据
