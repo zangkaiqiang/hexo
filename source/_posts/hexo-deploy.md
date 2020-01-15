@@ -38,6 +38,7 @@ deploy:
   repo: https://gh_token@github.com/{username}/{username}.github.io.git
   branch: master
 ```
+<!--more-->
 ## travis关联Github
 travis官网：https://travis-ci.org/
 ## 配置.travis.yml
