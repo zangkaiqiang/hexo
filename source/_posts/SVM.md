@@ -67,22 +67,62 @@ $$
 
 定义拉格朗日函数
 $$
-L(w,b,a)=\frac{1}{2}||w||^2-\sum^n_{i=1}a_i(y_i(w^Tx_i+b)-1)
+L(w,b,\alpha)=\frac{1}{2}||w||^2-\sum^n_{i=1}a_i(y_i(w^Tx_i+b)-1)
 $$
 那么
 $$
-\theta(w)=\max\limits_{a\geqslant0}L(w,b,a)
+\theta(w)=\max\limits_{\alpha\geqslant0}L(w,b,\alpha)
 $$
 此时的目标函数为
 $$
-\min\ \theta(w) = \min\limits_{w,b} \max\limits_{a\geqslant0}L(w,b,a) = p \\\\
-\max \limits_{a\geqslant 0} \min\limits_{w,b}L(w,b,a) = d \\\\
+\min\ \theta(w) = \min\limits_{w,b} \max\limits_{\alpha\geqslant0}L(w,b,\alpha) = p \\\\
+\max \limits_{\alpha\geqslant 0} \min\limits_{w,b}L(w,b,\alpha) = d \\\\
 d \leqslant p
 $$
-在满足某些条件的情况下，这两者相等，这个时候就可以通过求解对偶问题来间接地求解原始问题。
+在满足某些条件的情况下，这两者相等，这个时候就可以通过求解对偶问题来间接地求解原始问题。转化为对偶问题更容易求解。
 
 ## 对偶问题的求解
+此时的目标函数
+$$
+\max \limits_{\alpha\geqslant 0} \min\limits_{w,b}L(w,b,\alpha)
+$$
+先对$w,b$求极小
+$$
+\frac{\partial L}{\partial w} = 0\longrightarrow w=\sum^n_{i=1}\alpha_iy_ix_i \\\\
+\frac{\partial L}{\partial b}=0 \longrightarrow \sum^n_{i=1}\alpha_iy_i = 0
+$$
+
+将其带入$L$
+
+$$
+L(w,b,\alpha)=\frac{1}{2}||w||^2-\sum^n_{i=1}a_i(y_i(w^Tx_i+b)-1)\\\\
+=\sum^n_{i=1}\alpha_i-\frac{1}{2}\sum^n_{i,j=1}\alpha_i\alpha_jy_iy_jx^T_ix_j
+$$
+此时的拉格朗日函数只包含了一个变量
+$$
+\max\limits_\alpha\sum^n_{i=1}\alpha_i-\frac{1}{2}\sum^n_{i,j=1}\alpha_i\alpha_jy_iy_jx^T_ix_j \\\\
+s.t.,\alpha_i\geqslant0,i=1,2...n\\\\
+\sum^n_{i=1}\alpha_iy_i = 0
+$$
+
+# 核函数
+当处理线性不可分的数据时，无法在当前维度找到超平面，此时可以选择将该低维数据映射到高维空间。
+映射到高维空间时可能发生维度不可控的问题，当维度过大时，将很难计算。
+
+核函数就是解决这样的问题。既可以将数据映射到高维空间，有可以在低维空间进行计算。perfect！
+## 多项式核
+多项式核就是非常容易造成维度过大的问题
+## 高斯核函数
+$$
+k(x_1,x_2)=\exp^{(-\frac{||x_1-x_2||^2}{2\sigma^2})}
+$$
+该核函数可以将数据映射到无穷维
+$$
+Talor变换
+$$
+
+# 松弛变量处理outliers
 
 # SMO算法推导
 
-# 高斯核函数
+
