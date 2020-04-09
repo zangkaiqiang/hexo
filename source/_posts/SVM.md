@@ -76,9 +76,7 @@ $$
 此时的目标函数为
 $$
 \min\ \theta(w) = \min\limits_{w,b} \max\limits_{a>=0}L(w,b,a) = p^*\\
-$$
 
-$$
 \max \limits_{a>=0} \min\limits_{w,b}L(w,b,a) = d^*\\
 d^*<=p^*
 $$
