@@ -48,20 +48,20 @@ $$
 # 拉格朗日对偶变换
 根据间隔定义
 $$
-y_i(w^Tx_i+b)=r_{hi}>=r_h (i = 1,2...n)
+y_i(w^Tx_i+b)=r_{hi}\geqslant r_h (i = 1,2...n)
 $$
 我们假设函数间隔为1，那么有
 $$
 r_h=1\\
-y_i(w^Tx_i+b)>=1
+y_i(w^Tx_i+b)\geqslant1
 $$
 那么目标函数可以转换为
 $$
-max\frac{1}{||w||}\quad s.t.,y_i(w^Tx_i+b)>=1
+max\frac{1}{||w||}\quad s.t.,y_i(w^Tx_i+b)\geqslant1
 $$
 该目标函数等价于
 $$
-min\ \frac{1}{2}||w||^2\quad s.t.,y_i(w^Tx_i+b)>=1
+min\ \frac{1}{2}||w||^2\quad s.t.,y_i(w^Tx_i+b)\geqslant1
 $$
 这种转换是为了计算方便。
 
@@ -71,14 +71,14 @@ L(w,b,a)=\frac{1}{2}||w||^2-\sum^n_{i=1}a_i(y_i(w^Tx_i+b)-1)
 $$
 那么
 $$
-\theta(w)=\max\limits_{a>=0}L(w,b,a)
+\theta(w)=\max\limits_{a\geqslant0}L(w,b,a)
 $$
 此时的目标函数为
 $$
-\min\ \theta(w) = \min\limits_{w,b} \max\limits_{a>=0}L(w,b,a) = p^*\\
+\min\ \theta(w) = \min\limits_{w,b} \max\limits_{a\geqslant0}L(w,b,a) = p^* \\
 
-\max \limits_{a>=0} \min\limits_{w,b}L(w,b,a) = d^*\\
-d^*<=p^*
+\max \limits_{a\geqslant 0} \min\limits_{w,b}L(w,b,a) = d^* \\
+d^*\leqslant p^*
 $$
 在满足某些条件的情况下，这两者相等，这个时候就可以通过求解对偶问题来间接地求解原始问题。
 
