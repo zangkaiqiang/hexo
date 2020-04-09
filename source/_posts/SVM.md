@@ -75,10 +75,10 @@ $$
 $$
 此时的目标函数为
 $$
-\min\ \theta(w) = \min\limits_{w,b} \max\limits_{a\geqslant0}L(w,b,a) = p^* \\\\
+\min\ \theta(w) = \min\limits_{w,b} \max\limits_{a\geqslant0}L(w,b,a) = p \\\\
 
-\max \limits_{a\geqslant 0} \min\limits_{w,b}L(w,b,a) = d^* \\\\
-d^*\leqslant p^*
+\max \limits_{a\geqslant 0} \min\limits_{w,b}L(w,b,a) = d \\\\
+d \leqslant p
 $$
 在满足某些条件的情况下，这两者相等，这个时候就可以通过求解对偶问题来间接地求解原始问题。
 
