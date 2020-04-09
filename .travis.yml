@@ -14,8 +14,8 @@ before_install:
 install:
   - npm install
   - npm install hexo-deployer-git --save
-  # - npm uninstall hexo-renderer-marked --save
-  # - npm install hexo-renderer-pandoc --save
+  - npm install hexo-renderer-marked --save
+  - npm install hexo-renderer-pandoc --save
 
 script:
   - hexo clean
