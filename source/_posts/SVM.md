@@ -29,11 +29,11 @@ $$
 此时需要几何间隔出场了。
 $x_0$为$x$在超平面$(w,b)$上的投影，$r$为$x$到超平面的距离
 $$
-x = x_0+r\frac{w}{||w||}\\
-w^Tx=w^Tx_0+r\frac{w^T w}{||w||}\\
-w^Tx=-b+r\frac{||w||^2}{||w||}\\
-r=\frac{w^Tx+b}{||w||}=\frac{f(x)}{||w||}\\
-r_g=yr = \frac{yf(x)}{||w||}\\
+x = x_0+r\frac{w}{||w||} \\\\
+w^Tx=w^Tx_0+r\frac{w^T w}{||w||} \\\\
+w^Tx=-b+r\frac{||w||^2}{||w||}\\\\
+r=\frac{w^Tx+b}{||w||}=\frac{f(x)}{||w||}\\\\
+r_g=yr = \frac{yf(x)}{||w||}\\\\
 r_g = \frac{r_h}{||w||}
 $$
 可以看出几何间隔就是函数间隔除以$||w||$，超平面参数的缩放不会改变几何间隔。
@@ -75,9 +75,9 @@ $$
 $$
 此时的目标函数为
 $$
-\min\ \theta(w) = \min\limits_{w,b} \max\limits_{a\geqslant0}L(w,b,a) = p^* \\
+\min\ \theta(w) = \min\limits_{w,b} \max\limits_{a\geqslant0}L(w,b,a) = p^* \\\\
 
-\max \limits_{a\geqslant 0} \min\limits_{w,b}L(w,b,a) = d^* \\
+\max \limits_{a\geqslant 0} \min\limits_{w,b}L(w,b,a) = d^* \\\\
 d^*\leqslant p^*
 $$
 在满足某些条件的情况下，这两者相等，这个时候就可以通过求解对偶问题来间接地求解原始问题。
