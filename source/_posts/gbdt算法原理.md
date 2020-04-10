@@ -9,7 +9,7 @@ categories:
 
 ## 负梯度
 $$
-r_{mi}=-[\frac{\partial L(y,f(x_i)} {\partial f(x_i)} ]_{f(x)=f_{m-1}(x) }
+r_{mi}=-[\frac{\partial L(y,f(x_i)} {\partial f(x_i)}] _ {f(x)=f_{m-1}(x) }
 $$
 
 这里的负梯度是损失函数在当前模型的负梯度，并不是我们常见的对变量的梯度。原因是算法是要对当前模型做增量更新，并不是对$x$做增量更新。
