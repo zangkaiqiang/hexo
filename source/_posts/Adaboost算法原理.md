@@ -6,7 +6,24 @@ categories:
 - algorithm
 ---
 
-<!-- 输入数据
+输入数据
+
 $$
 T={(x_1,y_1),(x_2,y_2),(x_3,y_3)...(x_m,y_m)}
-$$ -->
+$$
+
+$$
+[x]_i
+$$
+
+$$
+[\frac{\partial L(y,f(x_i)}{\partial f(x_i)}]_{f(x)=f_{m-1}(x)}
+$$
+
+$$
+f(x)=f_{m-1}(x)
+$$
+
+$$
+[\frac{\partial L(y,f(x_i)}{\partial f(x_i)}]_{f(x)}
+$$
