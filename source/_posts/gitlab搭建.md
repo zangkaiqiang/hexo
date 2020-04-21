@@ -17,10 +17,8 @@ gitlab_rails['gitlab_email_enabled'] = true
 gitlab_rails['gitlab_email_from'] = 'username@live.cn'
 gitlab_rails['gitlab_email_display_name'] = 'zangkaiqiang'
 
-<<<<<<< HEAD
 ## runner
-![png](output_15_1.png)
-=======
+
 gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "smtp.server.com"
 
@@ -62,4 +60,5 @@ gitlab-runner register
 
 ## reference
 * https://docs.gitlab.com/omnibus/settings/smtp.html
->>>>>>> d0cc9dd4db0c76698daf35b49b188a67c90f8aa3
+
+![png](output_15_1.png)
