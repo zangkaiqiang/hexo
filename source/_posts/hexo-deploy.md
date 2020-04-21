@@ -103,7 +103,20 @@ $ git push
 
 借助Travis ci，多终端就可以同步使用Hexo愉快的编写Markdown了
 
+## 插入图片
+修改_config.yml
+```
+post_asset_folder: true
+```
+再次新建笔记的时候回在_posts文件夹下生成一个文件和一个文件夹，文件夹是放置图片等资源
 
+插入图片的方法
+```
+{% asset_path slug %}
+{% asset_img img.jpg [title] %}
+{% asset_img img.png [title] %}
+{% asset_link slug [title] %}
+```
 
 ## 踩坑指南
 
@@ -125,3 +138,7 @@ https://zangkaiqiang.github.io
 ```
 https://zangkaiqiang.github.io/2020/01/13/hexo-deploy/#5e1db789ff02830008fa143b
 ```
+
+## reference 
+* https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/
+* http://etrd.org/2017/01/23/hexo%E4%B8%AD%E5%AE%8C%E7%BE%8E%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/
