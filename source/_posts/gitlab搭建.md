@@ -61,4 +61,4 @@ gitlab-runner register
 ## reference
 * https://docs.gitlab.com/omnibus/settings/smtp.html
 
-![png](output_15_1.png)
+
