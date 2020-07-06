@@ -18,6 +18,7 @@ def read_url(url):
     req = urlopen(url)
     arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
     img = cv2.imdecode(arr, -1)
+    img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     return img
     
 url = 'http://10.1.2.37:7777/images/2020/07/06/d5-24a.jpg'
