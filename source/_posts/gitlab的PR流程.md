@@ -21,7 +21,41 @@ gitlab 团队协作流程
 这里我只是修改了Readme文件，添加了一行内容TESTPR。
 ![alt](/images/iShot2020-06-0513.11.10.png)
 
-## 将自己修改过的内容合并到组仓库
+## 同步上游分支代码
+1. 添加源分支URL
+```
+git remote add upstream [源项目 URL]
+```
+2. 创建基于源项目的本地分支
+```
+# 只有第一次使用 chekcout -b
+git checkout -b upstream-master upstream/master
+```
+后面的checkout使用下面的命令
+```
+git checkout upstream-master
+
+```
+3. 从源分支获取最新的代码
+```
+git pull
+```
+4. 切换到本地主分支/开发分支
+```
+git checkout master
+```
+5. 合并本地分支和源分支
+
+```shell
+# 推荐使用ide进行操作
+git merge upstream-master
+```
+6. push到Fork的分支
+git push
+
+
+其中1、2的第一种操作只需要做一次，2的第二种操作和3-6在每次准备提MR的时候都需要做
+## 提MR
 在gitlab左边的侧边栏有merge request选项,进入该选项
 ![alt](/images/iShot2020-06-0513.11.53.png)
 
