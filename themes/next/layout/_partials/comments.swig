@@ -1,4 +1,11 @@
 {% if page.comments %}
+<script src="https://utteranc.es/client.js"
+        repo="zangkaiqiang/zangkaiqiang.github.io"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
   {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
     <div class="comments" id="comments">

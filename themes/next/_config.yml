@@ -376,10 +376,6 @@ changyan:
 
 utterances:
   enable: true
-  repo: zangkaiqiang/zangkaiqiang.github.io
-  issueTerm: title
-  theme: github-light
-  label: utterances
 
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
