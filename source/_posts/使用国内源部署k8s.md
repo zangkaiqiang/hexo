@@ -4,9 +4,14 @@ date: 2023-12-01 13:57:39
 tags:
 ---
 
-## 环境
-* 系统：ubuntu20.04
-* docker版本
+## 系统
+系统：ubuntu20.04
+```
+Linux 5.15.0-67-generic #74~20.04.1-Ubuntu SMP Wed Feb 22 14:52:34 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+## docker
+docker version
 ```
 Client:
  Version:           20.10.21
@@ -37,6 +42,65 @@ Server:
   Version:          0.19.0
   GitCommit:
 ```
+## 关闭swap
+必须关闭，不如kubelet服务会启动失败
+在 Ubuntu 系统上关闭 swap 分区可以通过以下步骤完成：
+
+1. **查看当前的 swap 状态：**
+
+   在终端中运行以下命令，以查看当前的 swap 状态：
+
+   ```bash
+   sudo swapon --show
+   ```
+
+   这将显示当前激活的 swap 分区或文件。
+
+2. **关闭 swap：**
+
+   使用以下命令关闭所有激活的 swap 分区：
+
+   ```bash
+   sudo swapoff -a
+   ```
+
+   请注意，这会立即关闭所有激活的 swap 分区，但不会在系统重新启动后生效。
+
+3. **永久禁用 swap：**
+
+   若要永久禁用 swap，需要编辑 `/etc/fstab` 文件。打开该文件并注释掉（在行首添加 `#` 符号）与 swap 分区相关的行。
+
+   使用文本编辑器打开 `/etc/fstab` 文件：
+
+   ```bash
+   sudo nano /etc/fstab
+   ```
+
+   在文件中找到类似于 `/swapfile` 或 `/dev/sdXY none swap sw 0 0` 的行，并在行首添加 `#` 符号，使其成为注释行。保存并退出编辑器。
+
+4. **删除 swap 文件（如果有）：**
+
+   如果你的 swap 是通过文件创建的（而不是分区），你可能还需要删除 swap 文件。首先，查看 swap 文件的位置：
+
+   ```bash
+   sudo file -s /swapfile
+   ```
+
+   然后，如果是文件而不是分区，请删除它：
+
+   ```bash
+   sudo rm /swapfile
+   ```
+
+5. **重新加载配置：**
+
+   重新加载系统配置以应用更改：
+
+   ```bash
+   sudo sysctl --system
+   ```
+
+现在，swap 已经被关闭和禁用。请注意，在某些情况下，系统可能需要 swap 分区来处理内存不足的情况。因此，请在禁用 swap 之前确保你了解系统的内存需求。如果你发现在禁用 swap 后出现内存问题，可以重新启用 swap 或考虑其他解决方案。
 
 ## 修改docker镜像源
 修改/etc/docker/daemon.json 如下
