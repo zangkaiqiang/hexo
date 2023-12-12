@@ -129,6 +129,20 @@ sudo apt update && apt install -y kubelet kubeadm kubectl
 kubeadm init --image-repository='registry.cn-hangzhou.aliyuncs.com/google_containers'
 ```
 
+
+
+## 加入集群
+
+在 Kubernetes 中，要获取用于加入工作节点（worker node）到集群的 kubeadm join 命令，你需要在主节点（master node）上运行以下命令：
+
+```
+kubeadm token create --print-join-command
+```
+上面的命令会得到一条join命令，通过该命令可以加入集群，默认的角色是worker，若要将节点加入到主节点，可以在 kubeadm join 命令中使用 --control-plane 选项。
+```
+kubeadm join <master-node-ip>:<master-node-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash> --control-plane
+```
+
 ----------------------------------
 
 ## 遇到的问题
@@ -166,6 +180,7 @@ sudo apt install kubelet kubeadm
 ```
 
 * ` kubelet_volumes.go:261] "There were many similar errors. Turn up verbosity to see them." `
+
 
 
 ## Reference
